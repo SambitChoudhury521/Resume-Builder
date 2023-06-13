@@ -1,0 +1,20 @@
+.resume{
+    display: none;
+}
+.myimg{
+    border-radius: 50%;
+    width: 200px;
+}
+.background{
+    background-color: rgb(153, 225, 225);
+}
+.dark {
+    color: white;
+    background-color: black;
+}
+  .btn-container {
+    cursor: pointer;
+    padding-left: 0.5rem;
+    position: absolute;
+    top: 1rem;
+}

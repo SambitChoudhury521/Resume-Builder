@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Author" content="Sambit">
+    <meta name="About" content="Project Resume Builder">
+    <title>Resume Builder</title>
+    <!-- css links -->
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="shortcut icon"
+        href="https://static.vecteezy.com/system/resources/previews/004/619/830/original/online-job-application-chalk-icon-job-search-website-online-resume-builder-cv-maker-recruitment-website-isolated-chalkboard-illustration-vector.jpg"
+        type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="Dark">
+   <div class="btn-container">
+    <span onclick="dark()" class="material-symbols-outlined">
+        dark_mode
+    </span>
+   </div>
+    <div class="container" id="resume">
+        <!-- Begining Part / Heading-->
+        <h1 class="text-center mt-2">Resume Builder</h1>
+        <p class="text-center">Design By Sambit And Satya</p>
+        <div class="row">
+            <!-- Colume-1 for Personal Details -->
+            <div class="col-md-6">
+                <h3>Personal Details</h3>
+                <!-- Name Field -->
+                <div class="form-group">
+                    <label for="NameField">Your Name</label>
+                    <input type="text" id="NameField" class="form-control" placeholder="Enter here">
+                </div>
+                <!--  Contact Field -->
+                <div class="form-group mt-2">
+                    <label for="phoneField">Contact Number</label>
+                    <input type="text" id="phoneField" class="form-control" placeholder="Enter here">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="GmailField">Gmail</label>
+                    <input id="GmailField" type="email" class="form-control">
+                </div>
+                <!-- Address Field -->
+                <div class="form-group mt-2">
+                    <label for="addressField">Address</label>
+                    <textarea placeholder="Enter here" id="addressField" class="form-control">
+                    </textarea>
+                </div>
+                <!-- Image Field -->
+                <div class="form-group mt-2">
+                    <label for="imgField">Select Your Photo</label>
+                    <input id="imgField" type="file" class="form-control">
+                </div>
+                <!-- Links  -->
+                <p class="text-secondary mt-3">Important Links</p>
+                <div class="form-group mt-2">
+                    <label for="fbField">FaceBook</label>
+                    <input type="text" id="fbField" class="form-control" placeholder="Enter here">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="instaField">Instagram</label>
+                    <input type="text" id="instaField" class="form-control" placeholder="Enter here">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="linkedinField">Linkedin</label>
+                    <input type="text" id="linkedinField" class="form-control" placeholder="Enter here">
+                </div>
+            </div>
+            <!-- Colume-2 for Professional Details -->
+            <div class="col-md-6">
+                <h3>Professional Details</h3>
+                <div class="form-group mt-2">
+                    <!-- Objective Section -->
+                    <label>Objective</label>
+                    <textarea placeholder="Enter here" class="form-control" id="objectiveField" rows=4>
+                    </textarea>
+                </div>
+                <!-- Academic Qualification Field -->
+                <div class="form-group mt-2" id="aq">
+                    <label>Academic Qualificaion</label>
+                    <textarea placeholder="Enter here" class="form-control aqField" rows=4>
+                    </textarea>
+
+                    <!-- New Field Area -->
+
+                    <!-- Button To Add New Field -->
+                    <div class="container text-center mt-3" id="aqAddButton">
+                        <button onclick="addNewaqField()" class="btn btn-dark btn-sm">
+                            Add
+                        </button>
+                    </div>
+                </div>
+                       <!-- Work Experience Field -->
+                       <div class="form-group mt-2 " id="we">
+                        <label>Work Experience</label>
+                        <textarea placeholder="Enter here" class="form-control weField" rows=3.5>
+                            </textarea>
+    
+    
+                        <!-- New Field Area -->
+    
+                        <!-- Button To Add New Field -->
+                        <div class="container text-center mt-3" id="weAddButton">
+                            <button onclick="addNewWEField()" class="btn btn-dark btn-sm">
+                                Add
+                            </button>
+                        </div>
+                    </div>
+                           <!-- Referance -->
+                <div class="form-group mt-2 " id="Referance">
+                    <label>Referance</label>
+                    <textarea placeholder="Enter here" class="form-control reField" rows=4>
+                        </textarea>
+
+
+                    <!-- New Field Area -->
+
+                    <!-- Button To Add New Field -->
+                    <div class="container text-center mt-3" id="reAddButton">
+                        <button onclick="addNewreField()" class="btn btn-dark btn-sm">
+                            Add
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Generate Button  -->
+        <div class="container mt-3 text-center mb-3">
+            <button onclick="generateResume()" class="btn btn-primary btn-lg">
+                Generate Resume
+            </button>
+        </div>
+    </div>
+    <!-- Resume Templet -->
+    <div class="container resume " id="resume-Template">
+        <div class="row">
+            <div class="col-md-4 text-center py-5 background">
+                <!-- First colume -->
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqn_wieH0XTm8hbRaX8UTt6-7klhmEFnhkvOIsI_kG1A&usqp=CAU&ec=48665698" alt="profile pic" class="img-fluid myimg" id="img-t">
+                <div class="container">
+                    <p class="mt-2" id="name-t1"> Aman Kumar Tiwari</p>
+                    <p id="contact-t">+91 9776069960, +91 8599056697</p>
+                    <p id="gmail-t">resumeBuilder2023@gmail.com</p>
+                    <address id="address-t">
+                        LC:- 142/22,sailashree vihar , Bhubaneswar.
+                    </address>
+                    <hr>
+                    <p>
+                        <a id="fb-t" href="#" target="_blank">https://www.fb.com</a>
+                    </p>
+                    <p>
+                        <a id="insta-t" href="#" target="_blank">https://www.instagram.com</a>
+                    </p>
+                    <p>
+                        <a id="linkedin-t" href="#" target="_blank">https://www.Linkedin.com</a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-8 py-5">
+                <!-- Second colume -->
+                <h1 class="text-center" id="name-t2" style="font-weight: 980;">Aman Kumar Tiwari</h1>
+                <!-- Objective -->
+                <div class="card mt-2">
+                    <div class="card-header background">
+                        <h3>Objective</h3>
+                    </div>
+                    <div class="card-body">
+                        <p id="obj-t">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi ipsa officia, quod voluptatum accusantium quae esse harum nihil dicta numquam totam, blanditiis beatae odit modi praesentium consequatur fuga id. Voluptatum dignissimos eos nam quae sit nulla expedita aliquid a eveniet!
+                        </p>
+                    </div>
+                </div>
+                <!-- Academic Qualification -->
+                <div class="card mt-2">
+                    <div class="card-header background">
+                        <h3>Academic Qualificaion</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="aq-t">
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, repudiandae!</li>
+                            <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia, et.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, possimus?
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Work Experience -->
+                <div class="card mt-2">
+                    <div class="card-header background">
+                        <h3>Work Experience</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="we-t">
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, repudiandae!</li>
+                            <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia, et.</li>
+                        </ul>
+                    </div>
+                </div> 
+                <!-- Referance -->
+                <div class="card mt-2">
+                    <div class="card-header background">
+                        <h3>Referance</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="re-t">
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, repudiandae!</li>
+                            <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia, et.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, possimus?
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="container text-center mt-4">
+                    <button onclick="printResume()" class="btn background">
+                        Print Resume
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Javascript Links -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
